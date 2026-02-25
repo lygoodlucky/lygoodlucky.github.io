@@ -362,7 +362,7 @@
       userName: 'lyric',
       userTitle: '后端开发工程师',
       userDescription: '热爱编程，专注于后端技术栈，致力于创造优秀的用户体验',
-      aboutMe: '我是一名经验丰富的全栈开发工程师，拥有3年以上的java Web开发经验。熟悉element ui、Vue.js、Node.js等主流技术栈，擅长构建高性能、可扩展的Web应用。我对新技术充满热情，持续关注前端生态的发展趋势。',
+      aboutMe: '我是一名Java开发工程师，拥有3年以上的java Web开发经验。熟悉element ui、Vue.js、Node.js，Java 、Spring boot、MyBatis等主流技术栈，擅长构建高性能、可扩展的Web应用。我对新技术充满热情，持续关注前端生态的发展趋势。',
       githubLink: 'https://github.com/lygoodlucky',
       linkedinLink: 'https://linkedin.com/in/yourusername',
       emailLink: 'mailto:1623694322@qq.com',
@@ -378,23 +378,51 @@
         { name: 'Vue.js', level: 85 },
         { name: 'Elment ui', level: 85 },
         { name: 'node.js', level: 83 },
+        { name: 'nginx', level: 83 },
+        { name: 'iis', level: 83 },
         { name: 'CSS3', level: 82 },
       ],
       projects: [
         {
           title: '智慧病房系统',
-          description: '基于Vue.js java 开发的医院智慧护理交互系统后台管理系统,职责包括设备前端后端对接接口，完成与医院 HIS 系统的双向数据对接，保障患者信息、医嘱数据实时同步与业务闭环，构建 EMQX 物联网消息集群（支持千级设备并发），优化 MQTT 协议路由策略、实施 MySQL 读写分离 + 主从热备方案，结合 Caddy 反向代理实现智能负载均衡（动态权重分配）、日常运维、独立完成医院需求迭代、Dify Ai集成对接应答接口以及调整应答编排。',
-          techStack: 'Vue.js, Element UI, Java, Spring boot, Mybatis，emqx，caddy'
+          description: '基于Vue.js与Java开发医院智慧护理交互系统后台管理系统；\n' +
+             '负责设备与前后端接口对接，完成与医院HIS系统的双向数据对接，保障患者信息、医嘱数据实时同步与业务闭环；\n' +
+             '构建EMQX物联网消息集群（支持千级设备并发），优化MQTT协议路由策略；\n' +
+             '实施MySQL读写分离与主从热备方案，结合Caddy反向代理实现智能负载均衡（动态权重分配）；\n' +
+             '负责系统日常运维，独立完成医院需求迭代与功能优化；\n' +
+             '集成Dify AI平台，完成智能应答接口对接与对话编排逻辑优化；基于AI模型定时分析患者检验与检查报告，辅助临床决策。\n',
+          techStack: 'Vue.js, Element UI, Java, Spring boot, Mybatis，emqx，caddy,Elasticsearch'
         },
         {
           title: '门诊叫号系统',
-          description: '独立开发基于护士端使用',
-          techStack: 'React, Redux, Socket.io, Ant Design'
+          description: '独立完成三甲医院全院门诊系统的部署实施、日常监控及运维支持；\n'+
+                        '对接前端接口，提供患者信息、医生排班等数据服务，\n'  +
+                        '与医院 HIS 系统对接 WebService 接口，实现叫号队列数据同步与状态更新；\n' +
+                        '基于 Redis 设计并实现叫号队列入队逻辑与优先级规则（如加号插队策略），保障队列处理有序高效；\n' +
+                        '使用Emqx对接院内叫号设备厂商（显示屏、语音播报器等），确保软硬件协同稳定运行。\n' + 
+                        '开发院区数据可视化分析接口，为医师资源调度与排班优化提供精准数据支撑，助力提升门诊接诊效率与人力资源配置合理性。',
+          techStack: 'Vue.js,Element UI, Java, Spring boot, Mybatis，emqx，caddy,redis,Elasticsearch '
         },
         {
-          title: '移动应用',
-          description: '基于React Native开发的跨平台移动应用，实现了社交、购物、支付等核心功能。',
-          techStack: 'React Native, Firebase, Redux'
+          title: '输液监控系统',
+          description: '基于 Java 开发的输液监控系统，实现与输液仪硬件的数据对接与业务管理'+
+                      '通过EMQX接收输液仪经网关上报的MQTT消息，按主题策略解析设备应答数据（如滴速、剩余容量）；\n' +
+                      '对接前端界面，实时展示患者输液状态及进度信息；\n' +
+                      '输液异常（如滴速异常、完成）时，通过EMQX将告警消息推送至护士站终端，及时提醒医护人员；\n' +
+                      '适配不同医院环境，对接HIS系统获取医嘱与床位信息（采用WebService、MySQL视图等多样化接口方式）；\n' +
+                      '使用Elasticsearch存储患者输液全过程日志，支持操作追溯与统计分析；\n' + 
+                      '构建输液安全AI风控模块,使用MQTT消息推送至设备医护端，实现风险指标定时监测与预警干预',
+          techStack: 'Vue.js，Element UI, Java, Spring boot, Mybatis，emqx，caddy,Elasticsearch'
+        },
+        {
+          title: '报价系统(公司内部)',
+          description: '基于 Java 开发的报价系统，公司内部向客户提出的各个系统报价单的生成'+
+                      '通过EMQX接收输液仪经网关上报的MQTT消息，按主题策略解析设备应答数据（如滴速、剩余容量）；\n' +
+                      '对接前端界面，实时展示患者输液状态及进度信息；\n' +
+                      '输液异常（如滴速异常、完成）时，通过EMQX将告警消息推送至护士站终端，及时提醒医护人员；\n' +
+                      '适配不同医院环境，对接HIS系统获取医嘱与床位信息（采用WebService、MySQL视图等多样化接口方式）；\n' +
+                      '使用Elasticsearch存储患者输液全过程日志，支持操作追溯与统计分析；\n',
+          techStack: 'Vue.js，Element UI, Java, Spring boot, Mybatis，emqx，caddy,Elasticsearch'
         }
       ]
     };
